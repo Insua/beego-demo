@@ -9,7 +9,15 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "test.html"
+	c.Data["Website"] = "beego-app.test"
+	c.Data["Email"] = "insuaxe@gmail.com"
+	c.TplName = "index.tpl"
+}
+
+type TestController struct {
+	beego.Controller
+}
+
+func (this *TestController) Get() {
+	this.Ctx.WriteString("hello")
 }
